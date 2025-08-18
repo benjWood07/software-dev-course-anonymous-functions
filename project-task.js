@@ -31,7 +31,7 @@ const todos = [
   // ============================================
   
   /*
-  🔹 Task 1: Filter Incomplete Tasks
+  🔹 Task 1: Filter Incomplete Tasks - I can already tell this will be a challenge 
   
   Step-by-Step:
   1. Use the `filter()` method on the todos array.
