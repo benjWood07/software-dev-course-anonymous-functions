@@ -25,57 +25,21 @@ const todos = [
     { task: "Study JavaScript", completed: true, priority: 1 },
     { task: "Walk the dog", completed: false, priority: 2 },
   ];
-  
-  // ============================================
-  // 🔍 Tasks
-  // ============================================
-  
-  /*
-  🔹 Task 1: Filter Incomplete Tasks - I can already tell this will be a challenge 
-  
-  Step-by-Step:
-  1. Use the `filter()` method on the todos array.
-  2. Use an anonymous function as the callback.
-  3. Return only the tasks that are not completed.
-  */
-  
-  
-  /*
-  🔹 Task 2: Sort Tasks by Priority
-  
-  Step-by-Step:
-  1. Use the `sort()` method on the todos array.
-  2. Use an anonymous function as the comparison function.
-  3. Sort tasks in ascending order of priority (1 = highest).
-  */
-  
-  
-  /*
-  🔹 Task 3: Mark All Tasks as Completed
-  
-  Step-by-Step:
-  1. Use the `map()` method to return a new array.
-  2. Use an anonymous function to modify each object.
-  3. Change the `completed` property to `true` for every task.
-  */
-  
-  
-  /*
-  🔹 Task 4: Combine Filters
-  
-  Step-by-Step:
-  1. First, filter the todos to get only incomplete tasks.
-  2. Then, sort the filtered results by priority using `sort()`.
-  3. Use method chaining to perform both steps together.
-  */
-  
-  
-  // ============================================
-  // 🧪 Console Test Your Work
-  // ============================================
-  
-  // console.log("Incomplete Tasks:", ...);
-  // console.log("Sorted by Priority:", ...);
-  // console.log("All Tasks Completed:", ...);
-  // console.log("Sorted Incomplete Tasks:", ...);
+//Task 1: Filter Incomplete Tasks                                       //First time attempting arrow functions in an assignment - I might have overused them
+const incompleteTasks = todos.filter(todo => todo.completed === false); //Use arrow function to check if completed is false and return a new array with only incomplete tasks
+//Task 2: Sort Tasks by Priority
+const sortedByPriority = todos.sort((a, b) => a.priority - b.priority); //compare priority values (a.priority - b.priority) and return a negative number if a should come before b
+//Task 3: Mark All Tasks as Completed
+const allCompleted = todos.map(todo => ({    //Use map to create a new array of modified objects
+    ...todo,                                 //Spread operator copies all existing properties
+    completed: true                          //Override the completed property to true
+}));  
+//Task 4: Combine Filters
+const sortedIncompleteTasks = todos.filter(todo => todo.completed === false).sort((a, b) => a.priority - b.priority); //Filter incomplete tasks, then sort by priority
+//This was my first time using method chaining within a function
+//Console Test Your Work
+console.log("Incomplete Tasks:", incompleteTasks);
+console.log("Sorted by Priority:", sortedByPriority);
+console.log("All Tasks Completed:", allCompleted);
+console.log("Sorted Incomplete Tasks:", sortedIncompleteTasks);
   
