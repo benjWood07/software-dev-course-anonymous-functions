@@ -27,19 +27,17 @@ const todos = [
   ];
 //Task 1: Filter Incomplete Tasks                                       //First time attempting arrow functions in an assignment - I might have overused them
 const incompleteTasks = todos.filter(todo => todo.completed === false); //Use arrow function to check if completed is false and return a new array with only incomplete tasks
+console.log("Incomplete Tasks:", incompleteTasks);       // Test output to verify results
 //Task 2: Sort Tasks by Priority
 const sortedByPriority = todos.sort((a, b) => a.priority - b.priority); //compare priority values (a.priority - b.priority) and return a negative number if a should come before b
+console.log("Sorted by Priority:", sortedByPriority);     // Test output to verify results
 //Task 3: Mark All Tasks as Completed
 const allCompleted = todos.map(todo => ({    //Use map to create a new array of modified objects
     ...todo,                                 //Spread operator copies all existing properties
     completed: true                          //Override the completed property to true
-}));  
+})); 
+console.log("All Tasks Completed:", allCompleted);      // Test output to verify results
 //Task 4: Combine Filters
 const sortedIncompleteTasks = todos.filter(todo => todo.completed === false).sort((a, b) => a.priority - b.priority); //Filter incomplete tasks, then sort by priority
+console.log("Sorted Incomplete Tasks:", sortedIncompleteTasks);    // Test output to verify results
 //This was my first time using method chaining within a function
-//Console Test Your Work
-console.log("Incomplete Tasks:", incompleteTasks);
-console.log("Sorted by Priority:", sortedByPriority);
-console.log("All Tasks Completed:", allCompleted);
-console.log("Sorted Incomplete Tasks:", sortedIncompleteTasks);
-  
